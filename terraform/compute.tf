@@ -4,9 +4,10 @@ data "google_compute_image" "ubuntu" {
 }
 
 resource "google_compute_instance" "instance" {
-   name         = "nextcloud-instance"
-   machine_type = "e2-small"
-   zone         = "europe-west3-a"
+  name         = "nextcloud-instance"
+  machine_type = "e2-small"
+  zone         = "europe-west3-a"
+  tags = ["nextcloud"]
 
   scheduling {
     preemptible = true
@@ -28,5 +29,6 @@ resource "google_compute_instance" "instance" {
     }
   }
 
-   tags = ["nextcloud"]
+  metadata_startup_script = file("startup.sh")
+
 }
