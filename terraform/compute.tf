@@ -10,6 +10,7 @@ resource "google_compute_instance" "instance" {
 
   scheduling {
     preemptible = true
+    automatic_restart = false
   }
   
   boot_disk {
