@@ -3,8 +3,8 @@ data "google_compute_image" "ubuntu" {
   project = "ubuntu-os-cloud"
 }
 
-resource "google_compute_instance" "INSTANZ" {
-   name         = "INSTANZ"
+resource "google_compute_instance" "instance" {
+   name         = "nextcloud-instance"
    machine_type = "e2-small"
    zone         = "europe-west3-a"
 
